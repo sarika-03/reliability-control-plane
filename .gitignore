@@ -8,3 +8,4 @@ coverage
 *.log
 *.tmp
 .opentelemetry-demo
+observability/opentelemetry-demo/
