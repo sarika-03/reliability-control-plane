@@ -1,0 +1,11 @@
+apiVersion: 1
+
+apps:
+  - type: 'sarika1731-reliabilitycontrolplane-app'
+    org_id: 1
+    org_name: 'sarika1731'
+    disabled: false
+    jsonData:
+      prometheusDatasourceUid: rcp-lab-prometheus
+      lokiDatasourceUid: rcp-lab-loki
+      tempoDatasourceUid: rcp-lab-tempo

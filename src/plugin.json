@@ -1,0 +1,64 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "app",
+  "name": "Reliability Control Plane",
+  "id": "sarika1731-reliabilitycontrolplane-app",
+  "backend": false,
+  "info": {
+    "keywords": ["app", "observability", "sre", "incident-response", "reliability"],
+    "description": "Correlate metrics, logs, and traces into reliability investigation workflows inside Grafana.",
+    "author": {
+      "name": "Sarika1731"
+    },
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "includes": [
+    {
+      "type": "page",
+      "name": "Overview",
+      "path": "/a/%PLUGIN_ID%/overview",
+      "addToNav": true,
+      "defaultNav": true
+    },
+    {
+      "type": "page",
+      "name": "Services",
+      "path": "/a/%PLUGIN_ID%/services",
+      "addToNav": true,
+      "defaultNav": false
+    },
+    {
+      "type": "page",
+      "name": "Incidents",
+      "path": "/a/%PLUGIN_ID%/incidents",
+      "addToNav": true,
+      "defaultNav": false
+    },
+    {
+      "type": "page",
+      "icon": "node-graph-line",
+      "name": "Topology",
+      "path": "/a/%PLUGIN_ID%/topology",
+      "addToNav": true,
+      "defaultNav": false
+    },
+    {
+      "type": "page",
+      "icon": "cog",
+      "name": "Configuration",
+      "path": "/plugins/%PLUGIN_ID%",
+      "role": "Admin",
+      "addToNav": true
+    }
+  ],
+  "dependencies": {
+    "grafanaDependency": ">=12.3.0",
+    "plugins": []
+  }
+}

@@ -1,0 +1,17 @@
+# Reliability Control Plane lab override.
+# Sends OpenTelemetry Demo traces, metrics, and logs to the local Grafana LGTM stack.
+
+exporters:
+  otlphttp/lgtm:
+    endpoint: http://host.docker.internal:4318
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      exporters: [spanmetrics, otlphttp/lgtm, debug]
+    metrics:
+      exporters: [otlphttp/lgtm, debug]
+    logs:
+      exporters: [otlphttp/lgtm, debug]

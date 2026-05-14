@@ -1,0 +1,31 @@
+name: reliability-control-plane-telemetry
+
+services:
+  lgtm:
+    image: grafana/otel-lgtm:latest
+    container_name: reliability-control-plane-lgtm
+    ports:
+      - "3001:3000"
+      - "4317:4317"
+      - "4318:4318"
+      - "9090:9090"
+      - "3100:3100"
+      - "3200:3200"
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+
+  k6:
+    image: grafana/k6:latest
+    profiles:
+      - load
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./k6:/scripts:ro
+    environment:
+      TARGET_BASE_URL: ${TARGET_BASE_URL:-http://host.docker.internal:8080}
+      K6_DURATION: ${K6_DURATION:-10m}
+      K6_VUS: ${K6_VUS:-20}
+      K6_HTTP_FAIL_MAX_RATE: ${K6_HTTP_FAIL_MAX_RATE:-}
+    command: run /scripts/incident-load.js

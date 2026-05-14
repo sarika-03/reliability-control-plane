@@ -1,0 +1,21 @@
+services:
+  grafana:
+    user: root
+
+    image: grafana/grafana-enterprise:latest
+
+    ports:
+      - "3000:3000"
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    volumes:
+      - .:/var/lib/grafana/plugins/sarika1731-reliabilitycontrolplane-app
+      - ./provisioning:/etc/grafana/provisioning
+
+    environment:
+      GF_DEFAULT_APP_MODE: development
+      GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS: sarika1731-reliabilitycontrolplane-app
+
+    container_name: sarika1731-reliabilitycontrolplane-app

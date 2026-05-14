@@ -1,0 +1,29 @@
+apiVersion: 1
+
+datasources:
+  - name: RCP Lab Prometheus
+    uid: rcp-lab-prometheus
+    type: prometheus
+    access: proxy
+    url: http://host.docker.internal:9090
+    isDefault: true
+    editable: true
+
+  - name: RCP Lab Loki
+    uid: rcp-lab-loki
+    type: loki
+    access: proxy
+    url: http://host.docker.internal:3100
+    editable: true
+
+  - name: RCP Lab Tempo
+    uid: rcp-lab-tempo
+    type: tempo
+    access: proxy
+    url: http://host.docker.internal:3200
+    editable: true
+    jsonData:
+      tracesToLogsV2:
+        datasourceUid: rcp-lab-loki
+      serviceMap:
+        datasourceUid: rcp-lab-prometheus
