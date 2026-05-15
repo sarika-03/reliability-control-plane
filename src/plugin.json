@@ -35,21 +35,21 @@
     {
       "type": "page",
       "name": "Overview",
-      "path": "/a/%PLUGIN_ID%/overview",
+      "path": "/a/sarika1731-reliabilitycontrolplane-app/overview",
       "addToNav": true,
       "defaultNav": true
     },
     {
       "type": "page",
       "name": "Services",
-      "path": "/a/%PLUGIN_ID%/services",
+      "path": "/a/sarika1731-reliabilitycontrolplane-app/services",
       "addToNav": true,
       "defaultNav": false
     },
     {
       "type": "page",
       "name": "Incidents",
-      "path": "/a/%PLUGIN_ID%/incidents",
+      "path": "/a/sarika1731-reliabilitycontrolplane-app/incidents",
       "addToNav": true,
       "defaultNav": false
     },
@@ -57,7 +57,7 @@
       "type": "page",
       "icon": "node-graph-line",
       "name": "Topology",
-      "path": "/a/%PLUGIN_ID%/topology",
+      "path": "/a/sarika1731-reliabilitycontrolplane-app/topology",
       "addToNav": true,
       "defaultNav": false
     },
@@ -65,7 +65,7 @@
       "type": "page",
       "icon": "cog",
       "name": "Configuration",
-      "path": "/plugins/%PLUGIN_ID%",
+      "path": "/plugins/sarika1731-reliabilitycontrolplane-app",
       "role": "Admin",
       "addToNav": true
     }

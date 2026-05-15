@@ -28,6 +28,12 @@ export default defineConfig<PluginOptions>({
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: process.env.GRAFANA_URL || 'http://localhost:3000',
 
+    /* Use the locally installed Chromium executable because browser download is unsupported on this OS. */
+    browserName: 'chromium',
+    launchOptions: {
+      executablePath: '/snap/bin/chromium',
+    },
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },

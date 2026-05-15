@@ -11,7 +11,7 @@ services:
       - "host.docker.internal:host-gateway"
 
     volumes:
-      - .:/var/lib/grafana/plugins/sarika1731-reliabilitycontrolplane-app
+      - ./dist:/var/lib/grafana/plugins/sarika1731-reliabilitycontrolplane-app
       - ./provisioning:/etc/grafana/provisioning
 
     environment:
