@@ -26,13 +26,13 @@ The Reliability Control Plane plugin provides a unified dashboard for observing 
 ## Screenshots
 
 ### Overview Dashboard
-![Overview](img/overview.png)
+![Overview](https://github.com/sarika-03/reliability-control-plane/raw/main/src/img/overview.png)
 
 ### Incidents Page
-![Incidents](img/incidents.png)
+![Incidents](https://github.com/sarika-03/reliability-control-plane/raw/main/src/img/incidents.png)
 
 ### Topology View
-![Topology](img/topology.png)
+![Topology](https://github.com/sarika-03/reliability-control-plane/raw/main/src/img/topology.png)
 
 ## Requirements
 
@@ -86,13 +86,8 @@ The Reliability Control Plane plugin provides a unified dashboard for observing 
 
 For detailed documentation, API references, and advanced configuration:
 
-- [Plugin Documentation](https://github.com/sarika-03/reliability-control-plane/docs/)
+- [Plugin Documentation](https://github.com/sarika-03/reliability-control-plane/tree/main/docs/)
 - [Grafana Plugin Development](https://grafana.com/developers/plugin-tools/)
-- [API Reference](https://github.com/sarika-03/reliability-control-plane/api/)
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](https://github.com/sarika-03/reliability-control-plane/blob/main/CONTRIBUTING.md) for details.
 
 ### Development Setup
 

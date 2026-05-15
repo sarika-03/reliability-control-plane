@@ -105,21 +105,17 @@ No:
 
 # Screenshots
 
-## Services
+## Overview Dashboard
 
-*Add screenshot here*
+![Overview](https://github.com/sarika-03/reliability-control-plane/raw/main/src/img/overview.png)
 
-## Incidents
+## Incidents Page
 
-*Add screenshot here*
+![Incidents](https://github.com/sarika-03/reliability-control-plane/raw/main/src/img/incidents.png)
 
-## Topology
+## Topology View
 
-*Add screenshot here*
-
-## Configuration
-
-*Add screenshot here*
+![Topology](https://github.com/sarika-03/reliability-control-plane/raw/main/src/img/topology.png)
 
 ---
 
