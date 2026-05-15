@@ -9,15 +9,15 @@
     "alwaysStrict": true,
     "declaration": false,
     "rootDir": "../src",
-    "baseUrl": "../src",
     "typeRoots": ["../node_modules/@types"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "ignoreDeprecations": "5.0"
   },
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs",
-      "moduleResolution": "node",
-      "target": "es5",
+      "moduleResolution": "bundler",
+      "target": "es2015",
       "esModuleInterop": true
     },
     "transpileOnly": true

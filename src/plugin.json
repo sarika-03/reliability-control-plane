@@ -14,7 +14,20 @@
       "small": "img/logo.svg",
       "large": "img/logo.svg"
     },
-    "screenshots": [],
+    "screenshots": [
+      {
+        "name": "Overview Dashboard",
+        "path": "img/overview.png"
+      },
+      {
+        "name": "Incident Intelligence",
+        "path": "img/incidents.png"
+      },
+      {
+        "name": "Topology Analysis",
+        "path": "img/topology.png"
+      }
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
