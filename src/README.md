@@ -1,50 +1,131 @@
-<!-- This README file is going to be the one displayed on the Grafana.com website for your plugin. Uncomment and replace the content here before publishing.
-
-Remove any remaining comments before publishing as these may be displayed on Grafana.com -->
-
 # Reliability Control Plane
 
-<!-- To help maximize the impact of your README and improve usability for users, we propose the following loose structure:
+[![Grafana](https://img.shields.io/badge/Grafana-11.x-orange)](https://grafana.com)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-**BEFORE YOU BEGIN**
-- Ensure all links are absolute URLs so that they will work when the README is displayed within Grafana and Grafana.com
-- Be inspired ✨
-  - [grafana-polystat-panel](https://github.com/grafana/grafana-polystat-panel)
-  - [volkovlabs-variable-panel](https://github.com/volkovlabs/volkovlabs-variable-panel)
+A comprehensive Grafana app plugin for monitoring and managing system reliability, incidents, and service health in real-time.
 
-**ADD SOME BADGES**
+## Overview
 
-Badges convey useful information at a glance for users whether in the Catalog or viewing the source code. You can use the generator on [Shields.io](https://shields.io/badges/dynamic-json-badge) together with the Grafana.com API
-to create dynamic badges that update automatically when you publish a new version to the marketplace.
+The Reliability Control Plane plugin provides a unified dashboard for observing and controlling the reliability of your systems. It integrates with various data sources to offer insights into:
 
-- For the URL parameter use `https://grafana.com/api/plugins/your-plugin-id`.
-- Example queries:
-  - Downloads: `$.downloads`
-  - Catalog Version: `$.version`
-  - Grafana Dependency: `$.grafanaDependency`
-  - Signature Type: `$.versionSignatureType`
-- Optionally, for the logo parameter use `grafana`.
+- **Incident Management**: Track and correlate incidents across your infrastructure
+- **Service Health Monitoring**: Real-time status of all services and components
+- **Topology Analysis**: Visualize service dependencies and relationships
+- **Operational Intelligence**: AI-powered root cause analysis and recommendations
 
-Full example: ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?logo=grafana&query=$.version&url=https://grafana.com/api/plugins/grafana-polystat-panel&label=Marketplace&prefix=v&color=F47A20)
+### Key Features
 
-Consider other [badges](https://shields.io/badges) as you feel appropriate for your project.
+- 📊 **Real-time Dashboards**: Live monitoring of system health and performance
+- 🚨 **Incident Correlation**: Automatic detection and correlation of related incidents
+- 🏗️ **Service Topology**: Interactive visualization of service dependencies
+- 🤖 **Intelligent Insights**: Machine learning-powered root cause analysis
+- 📈 **Trend Analysis**: Historical trends and predictive analytics
+- 🔧 **Operational Controls**: Direct actions for incident response
 
-## Overview / Introduction
-Provide one or more paragraphs as an introduction to your plugin to help users understand why they should use it.
+## Screenshots
 
-Consider including screenshots:
-- in [plugin.json](https://grafana.com/developers/plugin-tools/reference/plugin-json#info) include them as relative links.
-- in the README ensure they are absolute URLs.
+### Overview Dashboard
+![Overview](img/overview.png)
+
+### Incidents Page
+![Incidents](img/incidents.png)
+
+### Topology View
+![Topology](img/topology.png)
 
 ## Requirements
-List any requirements or dependencies they may need to run the plugin.
+
+- **Grafana**: Version 11.0 or later
+- **Data Sources**:
+  - Prometheus (for metrics)
+  - Loki (for logs)
+  - Tempo (for traces)
+  - PostgreSQL/MySQL (for incident data)
+- **Node.js**: Version 22+ (for development)
 
 ## Getting Started
-Provide a quick start on how to configure and use the plugin.
+
+### Installation
+
+1. **From Grafana Marketplace** (Recommended):
+   - Go to Grafana > Administration > Plugins
+   - Search for "Reliability Control Plane"
+   - Click Install
+
+2. **Manual Installation**:
+   ```bash
+   # Download the plugin ZIP from releases
+   # Extract to Grafana plugins directory
+   # Restart Grafana
+   ```
+
+### Configuration
+
+1. **Data Source Setup**:
+   - Configure Prometheus, Loki, and Tempo data sources
+   - Set up database connection for incident tracking
+
+2. **Plugin Configuration**:
+   - Access the plugin from Grafana sidebar
+   - Configure alerting thresholds and notification channels
+   - Set up service topology mappings
+
+3. **Permissions**:
+   - Ensure users have appropriate permissions for incident management
+
+### Basic Usage
+
+1. **Navigate to the Plugin**: Click "Reliability Control Plane" in the Grafana sidebar
+2. **Overview Page**: Get a high-level view of system health
+3. **Incidents Page**: View and manage active incidents
+4. **Services Page**: Monitor individual service status
+5. **Topology Page**: Explore service relationships
 
 ## Documentation
-If your project has dedicated documentation available for users, provide links here. For help in following Grafana's style recommendations for technical documentation, refer to our [Writer's Toolkit](https://grafana.com/docs/writers-toolkit/).
+
+For detailed documentation, API references, and advanced configuration:
+
+- [Plugin Documentation](https://github.com/sarika-03/reliability-control-plane/docs/)
+- [Grafana Plugin Development](https://grafana.com/developers/plugin-tools/)
+- [API Reference](https://github.com/sarika-03/reliability-control-plane/api/)
 
 ## Contributing
-Do you want folks to contribute to the plugin or provide feedback through specific means? If so, tell them how!
--->
+
+We welcome contributions! Please see our [Contributing Guide](https://github.com/sarika-03/reliability-control-plane/blob/main/CONTRIBUTING.md) for details.
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/sarika-03/reliability-control-plane.git
+cd reliability-control-plane
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+### Reporting Issues
+
+- [GitHub Issues](https://github.com/sarika-03/reliability-control-plane/issues)
+- [Grafana Community Forums](https://community.grafana.com/)
+
+## License
+
+This plugin is licensed under the Apache License 2.0. See [LICENSE](https://github.com/sarika-03/reliability-control-plane/blob/main/LICENSE) for details.
+
+## Support
+
+- 📧 **Email**: sarikasharma9711@gmail.com
+- 💬 **Community**: [Grafana Community](https://community.grafana.com/)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/sarika-03/reliability-control-plane/issues)
+
+---
+
+Made with ❤️ by [sarika-03](https://github.com/sarika-03)
