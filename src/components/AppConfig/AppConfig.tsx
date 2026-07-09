@@ -253,5 +253,5 @@ const updatePlugin = async (pluginId: string, data: Partial<PluginMeta<Reliabili
     data,
   });
 
-  return lastValueFrom(response);
+  return lastValueFrom(response as any);
 };

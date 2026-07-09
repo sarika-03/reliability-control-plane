@@ -617,7 +617,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     gap: ${theme.spacing(2)};
     justify-content: space-between;
 
-    @media (max-width: 700px) {
+    ${theme.breakpoints.down('md')} {
       flex-direction: column;
     }
   `,
@@ -637,14 +637,14 @@ const getStyles = (theme: GrafanaTheme2) => ({
     color: ${theme.colors.text.secondary};
     line-height: ${theme.typography.body.lineHeight};
     margin: ${theme.spacing(1)} 0 0;
-    max-width: 760px;
+    max-width: ${theme.breakpoints.values.md}px;
   `,
   kbdHint: css`
     color: ${theme.colors.text.secondary};
     font-size: ${theme.typography.bodySmall.fontSize};
     line-height: ${theme.typography.bodySmall.lineHeight};
     margin: ${theme.spacing(1)} 0 0;
-    max-width: 760px;
+    max-width: ${theme.breakpoints.values.md}px;
 
     kbd {
       background: ${theme.colors.background.primary};
@@ -660,11 +660,11 @@ const getStyles = (theme: GrafanaTheme2) => ({
     gap: ${theme.spacing(2)};
     grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    @media (max-width: 900px) {
+    ${theme.breakpoints.down('md')} {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @media (max-width: 520px) {
+    ${theme.breakpoints.down('sm')} {
       grid-template-columns: 1fr;
     }
   `,
@@ -690,7 +690,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     color: ${theme.colors.text.secondary};
     display: flex;
     gap: ${theme.spacing(1)};
-    min-height: 120px;
+    min-height: ${theme.spacing(15)};
   `,
   emptyState: css`
     align-items: center;
@@ -699,7 +699,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 280px;
+    min-height: ${theme.spacing(35)};
     padding: ${theme.spacing(4, 2)};
     text-align: center;
   `,
@@ -712,7 +712,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     color: ${theme.colors.text.secondary};
     line-height: ${theme.typography.body.lineHeight};
     margin: 0;
-    max-width: 620px;
+    max-width: ${theme.spacing(77.5)};
   `,
   incidentList: css`
     display: flex;
@@ -754,7 +754,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     gap: ${theme.spacing(2)};
     justify-content: space-between;
 
-    @media (max-width: 700px) {
+    ${theme.breakpoints.down('md')} {
       flex-direction: column;
     }
   `,
@@ -774,7 +774,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     gap: ${theme.spacing(1)};
     justify-content: flex-end;
 
-    @media (max-width: 700px) {
+    ${theme.breakpoints.down('md')} {
       justify-content: flex-start;
     }
   `,
@@ -783,11 +783,11 @@ const getStyles = (theme: GrafanaTheme2) => ({
     gap: ${theme.spacing(2)};
     grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    @media (max-width: 900px) {
+    ${theme.breakpoints.down('md')} {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @media (max-width: 560px) {
+    ${theme.breakpoints.down('sm')} {
       grid-template-columns: 1fr;
     }
   `,
@@ -908,7 +908,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     justify-content: space-between;
     padding: ${theme.spacing(1)};
 
-    @media (max-width: 700px) {
+    ${theme.breakpoints.down('md')} {
       align-items: flex-start;
       flex-direction: column;
     }
@@ -927,7 +927,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     gap: ${theme.spacing(1)};
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    @media (max-width: 900px) {
+    ${theme.breakpoints.down('md')} {
       grid-template-columns: 1fr;
     }
   `,
@@ -980,7 +980,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     grid-template-columns: minmax(92px, auto) 1fr;
     padding: ${theme.spacing(1.5)};
 
-    @media (max-width: 560px) {
+    ${theme.breakpoints.down('sm')} {
       grid-template-columns: 1fr;
     }
   `,

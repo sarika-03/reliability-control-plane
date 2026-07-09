@@ -145,7 +145,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     gap: ${theme.spacing(2)};
     justify-content: space-between;
 
-    @media (max-width: 700px) {
+    ${theme.breakpoints.down('md')} {
       flex-direction: column;
     }
   `,
@@ -165,7 +165,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     color: ${theme.colors.text.secondary};
     line-height: ${theme.typography.body.lineHeight};
     margin: ${theme.spacing(1)} 0 0;
-    max-width: 760px;
+    max-width: ${theme.breakpoints.values.md}px;
   `,
   datasourceStrip: css`
     display: flex;
@@ -177,7 +177,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     color: ${theme.colors.text.secondary};
     display: flex;
     gap: ${theme.spacing(1)};
-    min-height: 120px;
+    min-height: ${theme.spacing(15)};
   `,
   emptyState: css`
     align-items: center;
@@ -186,7 +186,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 280px;
+    min-height: ${theme.spacing(35)};
     padding: ${theme.spacing(4, 2)};
     text-align: center;
   `,
@@ -199,18 +199,18 @@ const getStyles = (theme: GrafanaTheme2) => ({
     color: ${theme.colors.text.secondary};
     line-height: ${theme.typography.body.lineHeight};
     margin: 0;
-    max-width: 640px;
+    max-width: ${theme.spacing(80)};
   `,
   serviceGrid: css`
     display: grid;
     gap: ${theme.spacing(2)};
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    @media (max-width: 1200px) {
+    ${theme.breakpoints.down('xl')} {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @media (max-width: 800px) {
+    ${theme.breakpoints.down('md')} {
       grid-template-columns: 1fr;
     }
   `,
@@ -242,7 +242,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     gap: ${theme.spacing(1.5)};
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    @media (max-width: 520px) {
+    ${theme.breakpoints.down('sm')} {
       grid-template-columns: 1fr;
     }
   `,

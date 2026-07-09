@@ -2,6 +2,7 @@ export interface LokiLogQueryOptions {
   labelFilters?: Record<string, string>;
   maxLines?: number;
   search?: string;
+  customSelector?: string;
 }
 
 export interface LokiLogQuery {
@@ -51,9 +52,20 @@ function createLokiQuery(refId: string, expr: string, maxLines = 500): LokiLogQu
 }
 
 function buildLogSelector(options: LokiLogQueryOptions): string {
+  if (options.customSelector) {
+    if (!options.search) {
+      return options.customSelector;
+    }
+    return `${options.customSelector} |= \`${escapeLogFilter(options.search)}\``;
+  }
+
   const filters = Object.entries(options.labelFilters ?? {})
     .filter(([, value]) => value.trim().length > 0)
     .map(([label, value]) => `${label}="${escapeLabelValue(value)}"`);
+
+  if (filters.length === 0) {
+    return '{service_name=~".+"}';
+  }
 
   const selector = `{${filters.join(',')}}`;
 

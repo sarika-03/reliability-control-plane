@@ -86,6 +86,31 @@ export async function probeTempoReadiness(tempo: DatasourceInfo): Promise<TempoR
       const check = isSuccessfulDatasourceResponse(response);
 
       if (!check.ok) {
+        // Some Tempo deployments (or proxying layers) return a downstream
+        // "Not Found" for a synthetic trace id even though the service is
+        // reachable. Treat a downstream Not Found for the synthetic `traceId`
+        // probe as a success signal for readiness.
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const results = (response as any).results ?? {};
+          const entry = results[target.refId];
+          const downstreamErr = entry?.error ?? '';
+
+          if (target.queryType === 'traceId' && typeof downstreamErr === 'string' && /not found/i.test(downstreamErr)) {
+            const path: TempoReadinessPath = 'traceId';
+
+            return {
+              health: successfulDatasourceHealth('tempo', tempo.uid, tempo.name),
+              path,
+              lastQueryType: target.queryType,
+              responseState: getResponseStateDescription(response),
+              compatibilityMode: 'traceid-then-traceql',
+            };
+          }
+        } catch (e) {
+          // fall through to continue below
+        }
+
         continue;
       }
 
